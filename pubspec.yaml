@@ -41,7 +41,10 @@ dependencies:
   rich_clipboard: ^1.0.1
   fluttertoast: ^8.2.2
   intl_phone_field: ^3.2.0
-  url_launcher: ^6.1.1
+  url_launcher: ^6.1.11
+  http:
+  flutter_reels_downloader: ^0.0.1
+  flutter_downloader:
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +80,11 @@ flutter:
     - assets/images/MoreToolsQuotesPage/
     - assets/images/TextRepeaterPage/
     - assets/images/DirectChatPage/
+    - android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+    - android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+    - android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+    - android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+    - android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

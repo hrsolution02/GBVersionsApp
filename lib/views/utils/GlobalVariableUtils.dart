@@ -11,4 +11,14 @@ String ResultText = "";
 String? DirectChatPageEnterMessages;
 String? DirectChatPageNumber;
 
-// StatusSaverPage
+// StoryDownloadPage
+
+String? StoryDownloadPageUrl;
+
+// PostDownloadPage
+
+String? PostDownloadPageUrl;
+
+// ProfileDownloadPage
+
+String? ProfileDownloadPageUrl;

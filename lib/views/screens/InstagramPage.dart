@@ -174,7 +174,7 @@ class _InstagramPageState extends State<InstagramPage> {
                                 "Story Download",
                                 style: TextStyle(
                                   color: WhiteText,
-                                  fontSize: h * 0.018,
+                                  fontSize: h * 0.015,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -216,7 +216,7 @@ class _InstagramPageState extends State<InstagramPage> {
                                 "Post & Reels Download",
                                 style: TextStyle(
                                   color: WhiteText,
-                                  fontSize: h * 0.018,
+                                  fontSize: h * 0.015,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -264,7 +264,7 @@ class _InstagramPageState extends State<InstagramPage> {
                                 "Show Profile & Download",
                                 style: TextStyle(
                                   color: WhiteText,
-                                  fontSize: h * 0.017,
+                                  fontSize: h * 0.015,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),

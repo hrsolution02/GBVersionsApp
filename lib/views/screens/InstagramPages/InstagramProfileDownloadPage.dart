@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gb_version_app/views/utils/ControllerUtils.dart';
+import 'package:gb_version_app/views/utils/GlobalVariableUtils.dart';
 import 'package:provider/provider.dart';
 
 import '../../../provider/ConnectionProvider.dart';
@@ -50,7 +52,7 @@ class _InstagramProfileDownloadPageState
             )
           : AppBar(
               title: Text(
-                "Post & Reels Download",
+                "Show Profile & Download",
                 style: TextStyle(
                   color: WhiteText,
                 ),
@@ -137,7 +139,209 @@ class _InstagramProfileDownloadPageState
                 ],
               ),
             )
-          : Container(),
+          : Padding(
+        padding: EdgeInsets.all(h * 0.02),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Show Profile Pictures & Download",
+              style: TextStyle(
+                color: LightText,
+                fontWeight: FontWeight.w500,
+                fontSize: h * 0.02,
+              ),
+            ),
+            SizedBox(
+              height: h * 0.02,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Form(
+                  key: ProfileDownloadPageFormKey,
+                  child: Expanded(
+                    child: SizedBox(
+                      height: h * 0.05,
+                      child: TextFormField(
+                        controller: ProfileDownloadPageUrlController,
+                        validator: (val) {
+                          if (val!.isEmpty) {
+                            return "Enter Valid Phone Number...";
+                          }
+                          return null;
+                        },
+                        onSaved: (val) {
+                          PostDownloadPageUrl = val;
+                        },
+                        cursorColor: WhiteText,
+                        style: TextStyle(
+                          fontSize: h * 0.015,
+                          color: WhiteText,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textInputAction: TextInputAction.done,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              h * 0.01,
+                            ),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(h * 0.01),
+                            borderSide: BorderSide(
+                              color: Colors.red,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: LightGreen,
+                            ),
+                            borderRadius: BorderRadius.circular(
+                              h * 0.01,
+                            ),
+                          ),
+                          hintText: "Paste URL Here...",
+                          hintStyle: TextStyle(
+                            fontSize: h * 0.015,
+                            color: WhiteText,
+                          ),
+                          filled: true,
+                          fillColor: GreyColor,
+                        ),
+                        onFieldSubmitted: (val) {
+                          if (PostDownloadPageFormKey.currentState!
+                              .validate()) {
+                            PostDownloadPageFormKey.currentState!.save();
+
+                            print("===============================");
+                            print(PostDownloadPageUrl);
+                            print("===============================");
+                          }
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: w * 0.05,
+                ),
+                Container(
+                  height: h * 0.05,
+                  width: w * 0.1,
+                  decoration: BoxDecoration(
+                    color: GreyColor,
+                    borderRadius: BorderRadius.circular(h * 0.01),
+                  ),
+                  child: Icon(
+                    Icons.download,
+                    color: DarkGreen,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: h * 0.06,),
+            Text(
+              "Suggestion Feed",
+              style: TextStyle(
+                fontSize: h * 0.02,
+                fontWeight: FontWeight.bold,
+                color: LightText,
+              ),
+            ),
+            SizedBox(
+              height: h * 0.02,
+            ),
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamed('InstagramPostDownloadPage');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(h * 0.02),
+                      color: GreyColor,
+                      border: Border.all(
+                        color: LightGreen,
+                      ),
+                    ),
+                    height: h * 0.2,
+                    width: w * 0.42,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: LightBGColor,
+                          radius: h * 0.05,
+                          child: Image.asset(
+                            InstagramPageImagePath + InstagramReelsIcon,
+                            height: h * 0.05,
+                          ),
+                        ),
+                        SizedBox(
+                          height: h * 0.02,
+                        ),
+                        Text(
+                          "Post & Reels Download",
+                          style: TextStyle(
+                            color: WhiteText,
+                            fontSize: h * 0.015,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Spacer(),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamed('InstagramStoryDownloadPage');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(h * 0.02),
+                      color: GreyColor,
+                      border: Border.all(
+                        color: LightGreen,
+                      ),
+                    ),
+                    height: h * 0.2,
+                    width: w * 0.42,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: LightBGColor,
+                          radius: h * 0.05,
+                          child: Image.asset(
+                            InstagramPageImagePath + InstagramStoryIcon,
+                            height: h * 0.05,
+                          ),
+                        ),
+                        SizedBox(
+                          height: h * 0.02,
+                        ),
+                        Text(
+                          "Story Download",
+                          style: TextStyle(
+                            color: WhiteText,
+                            fontSize: h * 0.015,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
       backgroundColor: LightBGColor,
     );
   }
