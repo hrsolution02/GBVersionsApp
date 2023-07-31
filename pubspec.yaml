@@ -45,6 +45,8 @@ dependencies:
   http:
   flutter_reels_downloader: ^0.0.1
   flutter_downloader:
+  path_provider: ^2.0.15
+
 
 dev_dependencies:
   flutter_test:
