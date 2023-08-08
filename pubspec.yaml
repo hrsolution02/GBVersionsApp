@@ -46,6 +46,11 @@ dependencies:
   flutter_reels_downloader: ^0.0.1
   flutter_downloader:
   path_provider: ^2.0.15
+  permission_handler: ^10.4.3
+  image_gallery_saver: ^2.0.3
+  video_player: ^2.7.0
+  chewie: ^1.7.0
+  video_thumbnail: ^0.5.3
 
 
 dev_dependencies:
