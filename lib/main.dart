@@ -6,6 +6,8 @@ import 'package:gb_version_app/views/screens/InstagramPages/InstagramPostDownloa
 import 'package:gb_version_app/views/screens/InstagramPages/InstagramProfileDownloadPage.dart';
 import 'package:gb_version_app/views/screens/InstagramPages/InstagramStoryDownloadPage.dart';
 import 'package:gb_version_app/views/screens/MoreToolsPage.dart';
+import 'package:gb_version_app/views/screens/MoreToolsPage/MoreToolsQuotesPage.dart';
+import 'package:gb_version_app/views/screens/MoreToolsPage/MoreToolsTextRepeaterPage.dart';
 import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/AloneQuotesPage.dart';
 import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/AnimalQuotesPage.dart';
 import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/AttitudeQuotesPage.dart';
@@ -16,8 +18,6 @@ import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/Friendship
 import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/GoalQuotesPage.dart';
 import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/InspirationQuotesPage.dart';
 import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/LoveQuotesPage.dart';
-import 'package:gb_version_app/views/screens/MoreToolsPage/MoreToolsQuotesPage.dart';
-import 'package:gb_version_app/views/screens/MoreToolsPage/MoreToolsTextRepeaterPage.dart';
 import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/RelationshipQuotesPage.dart';
 import 'package:gb_version_app/views/screens/MoreToolsPage/QuotesPage/SadQuotesPage.dart';
 import 'package:gb_version_app/views/screens/SettingsPage.dart';
