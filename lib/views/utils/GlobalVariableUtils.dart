@@ -1,7 +1,5 @@
 // TextRepeaterPage
 
-import 'dart:io';
-
 String? EnterMessages;
 String? EnterCount;
 String ResultText = "";
@@ -22,3 +20,7 @@ String? PostDownloadPageUrl;
 // ProfileDownloadPage
 
 String? ProfileDownloadPageUrl;
+
+// Setting Page
+
+String AppVersion = '';

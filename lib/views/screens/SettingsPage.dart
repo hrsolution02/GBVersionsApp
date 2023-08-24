@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gb_version_app/views/utils/DevelopersSettingList.dart';
+import 'package:gb_version_app/views/utils/GlobalVariableUtils.dart';
 import 'package:gb_version_app/views/utils/PlayStoreSettingList.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 
 import '../../provider/ConnectionProvider.dart';
@@ -19,6 +21,17 @@ class _SettingsPageState extends State<SettingsPage> {
     super.initState();
     Provider.of<ConnectionProvider>(context, listen: false)
         .checkInternetConnectivity();
+
+    // App Version
+
+    GetAppVersion();
+  }
+
+  Future<void> GetAppVersion() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    setState(() {
+      AppVersion = packageInfo.version;
+    });
   }
 
   @override
@@ -154,6 +167,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             child: Column(
                               children: PlayStoreSettingList.map(
                                 (e) => ListTile(
+                                  onTap: e['OnPressed'],
                                   leading: e['Icon'],
                                   subtitle: e['Subtitle'],
                                   title: e['Title'],
@@ -184,6 +198,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             child: Column(
                               children: DevelopersSettingList.map(
                                 (e) => ListTile(
+                                  onTap: e['OnPressed'],
                                   leading: e['Icon'],
                                   subtitle: e['Subtitle'],
                                   title: e['Title'],

@@ -136,7 +136,16 @@ class _WhatsappStatusSaverPageState extends State<WhatsappStatusSaverPage> {
                 ],
               ),
             )
-          : Container(),
+          : Center(
+              child: Text(
+                "Comming Soon...",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: h * 0.035,
+                  color: Colors.white,
+                ),
+              ),
+            ),
       backgroundColor: LightBGColor,
     );
   }

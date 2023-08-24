@@ -10,7 +10,7 @@ String ShareIcon = "ShareIcon.png";
 
 String SplashScreenImagePath = "assets/images/SplashScreenPage/";
 
-String AppIcon = "GBVersionAppLogo.png";
+String AppIcon = "GBVersionAppLogo.jpg";
 
 // SettingPage
 

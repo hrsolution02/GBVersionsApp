@@ -51,6 +51,8 @@ dependencies:
   video_player: ^2.7.0
   chewie: ^1.7.0
   video_thumbnail: ^0.5.3
+  carousel_slider: ^4.2.1
+  package_info_plus: ^4.1.0
 
 
 dev_dependencies:
@@ -78,6 +80,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/SplashScreenPage/
+    - assets/images/SplashScreenPage/GBVersionAppLogo.jpg
     - assets/images/GlobalImage/
     - assets/images/SettingPage/
     - assets/images/HomePage/

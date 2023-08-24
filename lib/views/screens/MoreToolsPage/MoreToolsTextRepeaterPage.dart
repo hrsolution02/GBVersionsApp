@@ -297,15 +297,7 @@ class _MoreToolsTextRepeaterPageState extends State<MoreToolsTextRepeaterPage> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          (ResultText.isEmpty)
-                              ? Fluttertoast.showToast(
-                                  msg: 'Fill Details First...',
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.BOTTOM,
-                                  backgroundColor: Colors.grey[700],
-                                  textColor: Colors.white,
-                                )
-                              : Container();
+                          Container();
                           String text = TextRepeaterPageMessageController.text;
                           int repetitions = int.tryParse(
                                   TextRepeaterPageCountController.text) ??

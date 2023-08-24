@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gb_version_app/views/utils/ColorUtils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 List<Map> DevelopersSettingList = [
   {
@@ -21,6 +22,14 @@ List<Map> DevelopersSettingList = [
         color: LightText,
       ),
     ),
+    'OnPressed': () async {
+      String websiteURL = 'https://www.hrsolution .com';
+      if (await canLaunch(websiteURL)) {
+        await launch(websiteURL);
+      } else {
+        throw 'Could not launch $websiteURL';
+      }
+    }
   },
   {
     'Icon': Icon(
@@ -41,5 +50,13 @@ List<Map> DevelopersSettingList = [
         color: LightText,
       ),
     ),
+    'OnPressed': () async {
+      String instagramAccount = 'https://www.instagram.com/hr_solution/';
+      if (await canLaunch(instagramAccount)) {
+        await launch(instagramAccount);
+      } else {
+        throw 'Could not launch $instagramAccount';
+      }
+    }
   },
 ];

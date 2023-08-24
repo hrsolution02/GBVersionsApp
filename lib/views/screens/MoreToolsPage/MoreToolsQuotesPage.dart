@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gb_version_app/views/utils/QuotesList.dart';
 import 'package:provider/provider.dart';
@@ -165,76 +164,81 @@ class _MoreToolsQuotesPageState extends State<MoreToolsQuotesPage> {
                     SizedBox(
                       height: h * 0.02,
                     ),
-                    Column(
-                      children: QuotesList.map(
-                        (e) => Column(
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).pushNamed(
-                                  e['Navigator'],
-                                );
-                              },
-                              child: Container(
-                                // height: h * 0.25,
-                                width: w,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(
-                                      h * 0.025,
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        viewportFraction: 0.8,
+                        enlargeCenterPage: true,
+                        autoPlay: true,
+                        autoPlayInterval: const Duration(seconds: 6),
+                        autoPlayAnimationDuration: const Duration(seconds: 2),
+                        autoPlayCurve: Curves.easeInOut,
+                      ),
+                      items: [
+                        ...QuotesList.map(
+                          (e) => Column(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pushNamed(
+                                    e['Navigator'],
+                                  );
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(
+                                        h * 0.025,
+                                      ),
+                                      bottomRight: Radius.circular(
+                                        h * 0.025,
+                                      ),
                                     ),
-                                    bottomRight: Radius.circular(
-                                      h * 0.025,
+                                    border: Border.all(
+                                      color: LightGreen,
                                     ),
                                   ),
-                                  border: Border.all(
-                                    color: LightGreen,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: h * 0.2,
+                                        width: w,
+                                        child: Image.asset(
+                                          e['Image'],
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ),
+                                      Container(
+                                        height: h * 0.03,
+                                        alignment: Alignment.center,
+                                        width: w,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(
+                                              h * 0.025,
+                                            ),
+                                            bottomRight: Radius.circular(
+                                              h * 0.025,
+                                            ),
+                                          ),
+                                          color: LightBGColor,
+                                        ),
+                                        child: Text(
+                                          e['Name'],
+                                          style: TextStyle(
+                                            fontSize: h * 0.02,
+                                            color: WhiteText,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: h * 0.2,
-                                      width: w,
-                                      child: Image.asset(
-                                        e['Image'],
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ),
-                                    Container(
-                                      height: h * 0.05,
-                                      alignment: Alignment.center,
-                                      width: w,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(
-                                            h * 0.025,
-                                          ),
-                                          bottomRight: Radius.circular(
-                                            h * 0.025,
-                                          ),
-                                        ),
-                                        color: LightBGColor,
-                                      ),
-                                      child: Text(
-                                        e['Name'],
-                                        style: TextStyle(
-                                          fontSize: h * 0.025,
-                                          color: WhiteText,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: h * 0.02,
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ).toList(),
+                      ],
                     ),
                   ],
                 ),

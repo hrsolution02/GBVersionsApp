@@ -245,11 +245,6 @@ class _WhatsappDirectChatPageState extends State<WhatsappDirectChatPage> {
                               if (DirectChatPageFormKey.currentState!
                                   .validate()) {
                                 DirectChatPageFormKey.currentState!.save();
-
-                                print("===============================");
-                                print(DirectChatPageEnterMessages);
-                                print(DirectChatPageNumber);
-                                print("===============================");
                               }
                             },
                             style: TextStyle(

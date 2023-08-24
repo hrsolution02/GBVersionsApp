@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:gb_version_app/views/utils/ColorUtils.dart';
 import 'package:gb_version_app/views/utils/ImageUtils.dart';
@@ -48,7 +49,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
                 fontWeight: FontWeight.bold,
                 color: WhiteText,
               ),
-            ),Spacer(),
+            ),
+            Spacer(),
             Text(
               "Powered By",
               style: TextStyle(
@@ -58,14 +60,16 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               ),
             ),
             Text(
-              "HR Solutions",
+              "HR Solution",
               style: TextStyle(
                 fontSize: h * 0.025,
                 fontWeight: FontWeight.bold,
                 color: WhiteText,
               ),
             ),
-            SizedBox(height: h * 0.02,),
+            SizedBox(
+              height: h * 0.02,
+            ),
           ],
         ),
       ),

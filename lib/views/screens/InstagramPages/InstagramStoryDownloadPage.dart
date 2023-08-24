@@ -226,21 +226,39 @@ class _InstagramStoryDownloadPageState
                       SizedBox(
                         width: w * 0.05,
                       ),
-                      Container(
-                        height: h * 0.05,
-                        width: w * 0.1,
-                        decoration: BoxDecoration(
-                          color: GreyColor,
-                          borderRadius: BorderRadius.circular(h * 0.01),
-                        ),
-                        child: Icon(
-                          Icons.download,
-                          color: DarkGreen,
+                      GestureDetector(
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Something Went Wrong...'),
+                              duration: Duration(seconds: 3),
+                              action: SnackBarAction(
+                                label: 'Back',
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          height: h * 0.05,
+                          width: w * 0.1,
+                          decoration: BoxDecoration(
+                            color: GreyColor,
+                            borderRadius: BorderRadius.circular(h * 0.01),
+                          ),
+                          child: Icon(
+                            Icons.download,
+                            color: DarkGreen,
+                          ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: h * 0.06,),
+                  SizedBox(
+                    height: h * 0.06,
+                  ),
                   Text(
                     "Suggestion Feed",
                     style: TextStyle(

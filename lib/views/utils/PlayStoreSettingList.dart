@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gb_version_app/views/utils/ColorUtils.dart';
+import 'package:gb_version_app/views/utils/GlobalVariableUtils.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 List<Map> PlayStoreSettingList = [
   {
@@ -21,6 +24,15 @@ List<Map> PlayStoreSettingList = [
         color: LightText,
       ),
     ),
+    'OnPressed': () async {
+      String appLink =
+          'https://play.google.com/store/apps/details?id=com.example.myapp';
+
+      Share.share(
+        'Check out this awesome app:\n$appLink',
+        subject: 'Download this cool app!',
+      );
+    }
   },
   {
     'Icon': Icon(
@@ -41,6 +53,15 @@ List<Map> PlayStoreSettingList = [
         color: LightText,
       ),
     ),
+    'OnPressed': () async {
+      String appStoreURL =
+          'https://play.google.com/store/apps/details?id=com.example.yourapp'; // Replace with your app's package name
+      if (await canLaunch(appStoreURL)) {
+        await launch(appStoreURL);
+      } else {
+        throw 'Could not launch app store URL';
+      }
+    }
   },
   {
     'Icon': Icon(
@@ -61,6 +82,16 @@ List<Map> PlayStoreSettingList = [
         color: LightText,
       ),
     ),
+    'OnPressed': () async {
+      String appStoreURL =
+          'https://play.google.com/store/apps/details?id=com.example.hrsolution';
+
+      if (await canLaunch(appStoreURL)) {
+        await launch(appStoreURL);
+      } else {
+        throw 'Could not launch app store URL';
+      }
+    }
   },
   {
     'Icon': Icon(
@@ -75,11 +106,12 @@ List<Map> PlayStoreSettingList = [
       ),
     ),
     'Subtitle': Text(
-      "Our Versions.\n0.0.1",
+      "App Version: $AppVersion",
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: LightText,
       ),
     ),
+    'OnPressed': () async {}
   },
 ];
