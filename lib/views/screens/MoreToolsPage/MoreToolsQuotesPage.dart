@@ -166,7 +166,7 @@ class _MoreToolsQuotesPageState extends State<MoreToolsQuotesPage> {
                     ),
                     CarouselSlider(
                       options: CarouselOptions(
-                        viewportFraction: 0.8,
+                        scrollDirection: Axis.vertical,
                         enlargeCenterPage: true,
                         autoPlay: true,
                         autoPlayInterval: const Duration(seconds: 6),
@@ -201,11 +201,14 @@ class _MoreToolsQuotesPageState extends State<MoreToolsQuotesPage> {
                                   child: Column(
                                     children: [
                                       Container(
-                                        height: h * 0.2,
-                                        width: w,
-                                        child: Image.asset(
-                                          e['Image'],
-                                          fit: BoxFit.fill,
+                                        height: h * 0.15,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                              e['Image'],
+                                            ),
+                                            fit: BoxFit.fitWidth,
+                                          ),
                                         ),
                                       ),
                                       Container(
