@@ -186,7 +186,7 @@ class _WhatsappDirectChatPageState extends State<WhatsappDirectChatPage> {
                               return null;
                             },
                             onSaved: (val) {
-                              DirectChatPageNumber = val;
+                              DirectChatPageNumber = int.parse(val!);
                             },
                             cursorColor: WhiteText,
                             style: TextStyle(
@@ -289,25 +289,24 @@ class _WhatsappDirectChatPageState extends State<WhatsappDirectChatPage> {
                     ),
                     GestureDetector(
                       onTap: () async {
-                        final url = 'https://wa.me/+91$DirectChatPageNumber';
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                          Fluttertoast.showToast(
-                            msg: "Sorry! Messages Server Couldn't Load...",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.BOTTOM,
-                            backgroundColor: Colors.grey[700],
-                            textColor: Colors.white,
-                          );
-                        } else {
-                          Fluttertoast.showToast(
-                            msg: "Write Your Messages Here Again ...",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.BOTTOM,
-                            backgroundColor: Colors.grey[700],
-                            textColor: Colors.white,
-                          );
-                          throw 'Could not launch $url';
+                        final phoneNumber = '+91$DirectChatPageNumber';
+                        final message = DirectChatPageEnterMessages!;
+                        final url =
+                            'https://wa.me/$phoneNumber?text=${Uri.encodeComponent(message)}';
+                        try {
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            Fluttertoast.showToast(
+                              msg: "Could not launch WhatsApp",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              backgroundColor: Colors.grey[700],
+                              textColor: Colors.white,
+                            );
+                          }
+                        } catch (e) {
+                          print('Error launching WhatsApp: $e');
                         }
                       },
                       child: Container(

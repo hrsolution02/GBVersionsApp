@@ -1,3 +1,9 @@
+// Whatsapp Variable
+
+import 'package:whatsapp/whatsapp.dart';
+
+WhatsApp whatsApp = WhatsApp();
+
 // TextRepeaterPage
 
 String? EnterMessages;
@@ -7,7 +13,7 @@ String ResultText = "";
 // DirectChatPage
 
 String? DirectChatPageEnterMessages;
-String? DirectChatPageNumber;
+int? DirectChatPageNumber;
 
 // StoryDownloadPage
 
